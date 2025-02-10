@@ -51,13 +51,13 @@ public class FamiliaDAO extends DAO {
     public List<Familia> listarFamiliasConHijos(int num_hijos, int edad_maxima) throws Exception {
         List<Familia> familias = new ArrayList<>();
         try {
-            String sql = "SELECT * FROM familias WHERE num_hijos > " + num_hijos + " AND edad_maxima <= " + edad_maxima
+            String sql = "SELECT * FROM familias WHERE num_hijos >= " + num_hijos + " AND edad_maxima <= " + edad_maxima
                     + ";";
             consultarDataBase(sql);
 
             while (resultSet.next()) {
                 Familia familia = new Familia();
-                familia.setId(resultSet.getInt("id"));
+                familia.setId(resultSet.getInt("id_familia"));
                 familia.setNombre(resultSet.getString("nombre"));
                 familia.setEdadMinima(resultSet.getInt("edad_minima"));
                 familia.setEdadMaxima(resultSet.getInt("edad_maxima"));

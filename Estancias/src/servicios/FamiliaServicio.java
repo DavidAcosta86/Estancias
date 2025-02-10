@@ -41,7 +41,15 @@ public class FamiliaServicio {
     public void listarFamiliasConHijos(int cant_hijos, int edad_maxima) {
         try {
             validarHijosYCantidad(cant_hijos, edad_maxima);
-            familiaDAO.listarFamiliasConHijos(cant_hijos, edad_maxima);
+            List<Familia> familias = familiaDAO.listarFamiliasConHijos(cant_hijos, edad_maxima);
+            if (familias.isEmpty()) {
+                System.out.println("No hay familias registradas.");
+            } else {
+                for (Familia familia : familias) {
+                    System.out.println(familia.toString());
+                }
+            }
+
         } catch (Exception e) {
             e.getStackTrace();
         }
