@@ -13,10 +13,12 @@ public class Casa {
     private Date Fecha_hasta;
     private int tiempo_minimo;
     private int tiempo_maximo;
-    private float precio_habitacion;
+    private double precio_habitacion;
     private String tipo_vivienda;
 
     // constructores
+    
+
     public Casa(int id_casa, String calle, int numero, String codigo_postal, String ciudad, String pais) {
         this.id_casa = id_casa;
         this.calle = calle;
@@ -24,6 +26,23 @@ public class Casa {
         this.codigo_postal = codigo_postal;
         this.ciudad = ciudad;
         this.pais = pais;
+    }
+
+    public Casa(int id_casa, String calle, int numero, String codigo_postal, String ciudad, String pais,
+            Date fecha_desde, Date fecha_hasta, int tiempo_minimo, int tiempo_maximo, double precioHabitacion,
+            String tipo_vivienda) {
+        this.id_casa = id_casa;
+        this.calle = calle;
+        this.numero = numero;
+        this.codigo_postal = codigo_postal;
+        this.ciudad = ciudad;
+        this.pais = pais;
+        this.fecha_desde = fecha_desde;
+        this.Fecha_hasta = fecha_hasta;
+        this.tiempo_minimo = tiempo_minimo;
+        this.tiempo_maximo = tiempo_maximo;
+        this.precio_habitacion = precioHabitacion;
+        this.tipo_vivienda = tipo_vivienda;
     }
 
     public Casa() {
@@ -111,7 +130,7 @@ public class Casa {
         this.tiempo_maximo = tiempo_maximo;
     }
 
-    public float getPrecio_habitacion() {
+    public double getPrecio_habitacion() {
         return precio_habitacion;
     }
 

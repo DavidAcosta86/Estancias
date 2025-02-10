@@ -1,10 +1,14 @@
 package servicios;
 
 import entidades.Casa;
-import persistencia.CasaDAO;
+import persisitencia.CasaDAO;
 import java.util.List;
 
 public class CasaServicio {
+
+    public CasaServicio(){
+
+    }
     private CasaDAO casaDAO = new CasaDAO();
 
     public void crearCasa(int id, String calle, int numero, String codigoPostal, String ciudad, String pais, 
@@ -21,7 +25,7 @@ public class CasaServicio {
         casaDAO.crearCasa(casa);
         System.out.println("Casa creada correctamente.");
     }
-
+    /* 
     public void listarCasas() throws Exception {
         List<Casa> casas = casaDAO.listarCasas();
         if (casas.isEmpty()) {
@@ -30,6 +34,18 @@ public class CasaServicio {
             for (Casa casa : casas) {
                 System.out.println(casa);
             }
+        }
+    }*/
+
+    public void listarCasasConFechas(String pais){
+        try{
+            if (pais != null)
+                casaDAO.listarCasasConFechas();
+            else{
+                throw new Exception();
+            }
+        }catch(Exception e){
+            System.out.println("El país no puede ser nulo");
         }
     }
 }
