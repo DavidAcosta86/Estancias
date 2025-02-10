@@ -1,13 +1,17 @@
 import java.util.Scanner;
 
 import persisitencia.*;
+import servicios.FamiliaServicio;
 
 public class App {
+    public static FamiliaServicio famSERV = new FamiliaServicio();
+
     public static void main(String[] args) throws Exception {
         // CasaDAO casaDao = new CasaDAO();
         // ComentariosDAO comentariosDao = new ComentariosDAO();
         // ClienteDAO cliDao = new ClienteDAO();
         // EstanciaDAO estDao = new EstanciaDAO();
+
         // estDao.listarEstancias();
         Scanner lee = new Scanner(System.in);
         int opcion = 0;
@@ -47,7 +51,7 @@ public class App {
 
         switch (opcion) {
             case 1:
-
+                famSERV.listarFamiliasConHijos(3, 10);
                 break;
 
             default:

@@ -38,7 +38,7 @@ public class FamiliaServicio {
         }
     }
 
-    public void listarFamiliasConHijos(int cant_hijos, int edad_maxima) throws Exception {
+    public void listarFamiliasConHijos(int cant_hijos, int edad_maxima) {
         try {
             validarHijosYCantidad(cant_hijos, edad_maxima);
             familiaDAO.listarFamiliasConHijos(cant_hijos, edad_maxima);
