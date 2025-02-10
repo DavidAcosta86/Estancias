@@ -2,17 +2,24 @@ import java.util.Scanner;
 
 import persisitencia.*;
 
+
 import servicios.ComentarioService;
 import servicios.CasaServicio;
+import servicios.FamiliaServicio;
+
+
 public class App {
-    static CasaServicio casaS = new CasaServicio();
+
+    public static FamiliaServicio famSERV = new FamiliaServicio();
+    public static CasaServicio casaS = new CasaServicio();
     public static void main(String[] args) throws Exception {
-    //CasaDAO casaDao = new CasaDAO();
-    //ComentariosDAO comentariosDao = new ComentariosDAO();
-    //ClienteDAO cliDao = new ClienteDAO();
-    //EstanciaDAO estDao = new EstanciaDAO();
-    
-     Scanner lee = new Scanner(System.in);
+        // CasaDAO casaDao = new CasaDAO();
+        // ComentariosDAO comentariosDao = new ComentariosDAO();
+        // ClienteDAO cliDao = new ClienteDAO();
+        // EstanciaDAO estDao = new EstanciaDAO();
+
+        // estDao.listarEstancias();
+        Scanner lee = new Scanner(System.in);
         int opcion = 0;
         do {
             mostrarOpcionesMenu();
@@ -26,7 +33,7 @@ public class App {
     public static int seleccionarOpcion(Scanner scan) {
         System.out.println("Ingrese opcion: ");
         int op = scan.nextInt();
-        //scan.nextLine();
+        scan.nextLine();
         return op;
     }
 
@@ -50,6 +57,7 @@ public class App {
 
         switch (opcion) {
             case 1:
+                famSERV.listarFamiliasConHijos(3, 10);
                 break;
             case 2:
                 casaS.listarCasasConFechas("Reino Unido");
@@ -60,7 +68,3 @@ public class App {
     }
 }
     
-  
-
-    
-

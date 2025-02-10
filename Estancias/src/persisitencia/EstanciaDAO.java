@@ -1,7 +1,6 @@
 package persisitencia;
 
 import entidades.Estancia;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +15,7 @@ public class EstanciaDAO extends DAO {
                     + estancia.getNombre_huesped() + "', '"
                     + estancia.getFecha_desde() + "', '"
                     + estancia.getFecha_hasta() + "');";
-            
+
             insertarModificarEliminarDataBase(sql);
         } catch (Exception e) {
             e.printStackTrace();
@@ -33,13 +32,12 @@ public class EstanciaDAO extends DAO {
 
             while (resultSet.next()) {
                 Estancia estancia = new Estancia(
-                    resultSet.getInt("id_estancia"),
-                    resultSet.getInt("id_cliente"),
-                    resultSet.getInt("id_casa"),
-                    resultSet.getString("nombre_huesped"),
-                    resultSet.getDate("fecha_desde"),
-                    resultSet.getDate("fecha_hasta")
-                );
+                        resultSet.getInt("id_estancia"),
+                        resultSet.getInt("id_cliente"),
+                        resultSet.getInt("id_casa"),
+                        resultSet.getString("nombre_huesped"),
+                        resultSet.getDate("fecha_desde"),
+                        resultSet.getDate("fecha_hasta"));
 
                 estancias.add(estancia);
             }
